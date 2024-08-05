@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>       
+        
+
+h1.headlabel, a h1.headlabel {
+    font-size: 30px;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+
+
+    header {
+      background-color: #09264d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;}
+
+    .header-left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;}
+
+
+    .header-button {
+        border-color: #2870ce;
+        background-color: #3184d7;
+        box-shadow: 0 2px 4px #8f9092;
+        margin-right: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .header-right {
+      text-align: right;}
+
+      #enquiry-form {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #enquiry-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #enquiry-form input[type="text"], #enquiry-form input[type="email"], #enquiry-form input[type="tel"] {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #enquiry-form textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #enquiry-form input[type="submit"] {
+            width: 100%;
+            height: 40px;
+            background-color: #3184d7;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #enquiry-form input[type="submit"]:hover {
+            background-color: #2870ce;
+        }
+        
+
+footer {
+  background-color: #09264d;
+  color: #fff;
+  /* position:absolute; */
+  bottom: 0;
+  padding: 1em;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-left {
+  width: 40%;
+  text-align: left;
+}
+
+.footer-center {
+  width: 30%;
+  text-align:center;  
+}
+
+.footer-right {
+  width: 30%;
+  text-align: right;
+}
+
+.footer-right a {
+  margin-left: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <a href="HomePage.html"><h1 class="headlabel">TechFriar</h1></a>
+          </div>
+      <div class="header-right">
+        <a href="HomePage.html"><button class="header-button">Home</button></a>
+        <a href="AboutUs.html"><button class="header-button">About</button></a>
+        <a href="Services.html"><button class="header-button">Services</button></a>
+        <a href="Blog.html"><button class="header-button">Blog</button></a>
+        <!-- <a href="HomePage.html"><button class="header-button">Contact</button></a> -->
+        
+      </div>
+    </header>
+    <main>
+        <h1>Contact Us</h1>
+
+        <form id="enquiry-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+            <input type="submit" value="Send Enquiry">
+          </form>
+    </main>
+    <footer>
+        <div class="footer-left">             
+            <p><i class="fa fa-home"></i> World Trade Center, Kochi, India</p>
+            <p><i class="fa-solid fa-phone"></i> +91-8111904512</p>
+          </div>
+        <div class="footer-center">
+          <p>&copy;  Sreyas S</p>
+        </div>
+        <div class="footer-right">
+          <a href="https://www.facebook.com/sree.sreyass" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/sreyas.s_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/sreyas-s-27857a205/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://wa.me/918111904512?Hey!" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="sreyas.sc@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('enquiry-form');
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+      
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const phone = document.getElementById('phone').value;
+          const message = document.getElementById('message').value;
+          let isValid = true;
+      
+          if (name === '') {
+            alert('Please enter your name');
+            isValid = false;
+          }
+      
+          if (email === '' ||!validateEmail(email)) {
+            alert('Please enter a valid email address');
+            isValid = false;
+          }
+      
+          if (phone === '' ||!validatePhone(phone)) {
+            alert('Please enter a valid phone number');
+            isValid = false;
+          }
+      
+          if (message === '') {
+            alert('Please enter a message');
+            isValid = false;
+          }
+      
+          if (isValid) {
+            console.log('Form is valid, sending enquiry...');
+          }
+        });
+      
+        function validateEmail(email) {
+          const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          return emailRegex.test(email);
+        }
+      
+        function validatePhone(phone) {
+          const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+          return phoneRegex.test(phone);
+        }
+      </script>
+</body>
+</html>
